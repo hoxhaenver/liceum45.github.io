@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Ліцей №45</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #dfe6ff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4b4f9c;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    header img {
+      width: 150px;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px;
+    }
+    header h1 {
+      font-size: 36px;
+      font-family: "Georgia", serif;
+    }
+    header p {
+      font-size: 18px;
+      font-style: italic;
+    }
+    nav {
+      background-color: #3a3e85;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: block;
+    }
+    nav a:hover {
+      background-color: #2f326f;
+    }
+    main {
+      padding: 20px;
+      background-color: white;
+      text-align: center;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      background-color: #4b4f9c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #3a3e85;
+    }
+    #feedbackSection {
+      display: none;
+      margin-top: 20px;
+      text-align: left;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      margin: 20px auto;
+    }
+    #videoContainer {
+      margin-top: 20px;
+    }
+    form input, form textarea, form button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      background-color: #4b4f9c;
+      color: white;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #3a3e85;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="licei.png" alt="Фото ліцею">
+    <h1>Ліцей №45</h1>
+    <p>Шлях учнів до знань та майбутнього!</p>
+  </header>
+
+  <nav>
+    <a href="#">Головна</a>
+    <a href="#">Про ліцей</a>
+    <a href="#">Новини</a>
+    <a href="#">Дистанційне навчання</a>
+    <a href="#">Вступ 2025</a>
+    <a href="#" onclick="showFeedbackForm()">Зворотній зв'язок</a>
+  </nav>
+
+  <main>
+    <h2>Ласкаво просимо!</h2>
+    <p>Ліцей 45 - сучасний навчальний заклад освіти в м. Києві.</p>
+    
+    <button onclick="openVideo()">Відео про Ліцей</button>
+
+    <div id="videoContainer" style="display:none;">
+      <video width="600" controls>
+        <source src="school45.mp4" type="video/mp4">
+      </video>
+    </div>
+  </main>
+
+  <!-- Зворотній зв'язок (форма з'являється після натискання кнопки) -->
+  <div id="feedbackSection">
+    <h2>Зворотній зв’язок</h2>
+    <p>Залиште своє повідомлення, і ми зв'яжемося з вами за телефоном або на пошту suchk229@gmail.com</p>
+    <form action="https://formspree.io/f/mdkggawk" method="POST">
+      <input type="text" name="name" placeholder="Ваше ім’я" required>
+      <input type="email" name="email" placeholder="Ваш Email" required>
+      <textarea name="message" placeholder="Ваше повідомлення" required></textarea>
+      <button type="submit">Надіслати</button>
+    </form>
+  </div>
+
+  <footer>
+    © 2025 Ліцей №45. Всі права захищено. Сайт створив Губіч Антон з 10-А класу
+  </footer>
+
+  <script>
+    function openVideo() {
+      document.getElementById("videoContainer").style.display = "block";
+    }
+
+    function showFeedbackForm() {
+      // Відображення форми зворотного зв'язку
+      document.getElementById("feedbackSection").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
